@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bloodline — GitHub Profile Card Generator</title>
+  <meta name="description" content="Generate a shareable GitHub profile stats card — followers, repos, stars, top languages and account age." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">🦇 VEMPIRE</p>
+      <h1>bloodline</h1>
+      <p class="tagline">Turn any GitHub profile into a shareable stats card.</p>
+    </header>
+
+    <section class="panel glass">
+      <form id="lookup-form">
+        <label for="username">GitHub username</label>
+        <div class="row">
+          <input id="username" name="username" type="text" placeholder="e.g. MrVempiree" autocomplete="off" spellcheck="false" />
+          <button class="btn" type="submit">Generate card</button>
+        </div>
+      </form>
+      <div class="row row-secondary">
+        <button class="btn btn-ghost" type="button" id="sample-btn">View sample card</button>
+        <span class="hint">Offline or rate-limited? The sample card always works.</span>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="card" class="card glass" hidden aria-label="Generated profile card"></section>
+
+    <footer>
+      <p>Data comes from the public GitHub API. No account or token needed.</p>
+      <p>Built by Lavish Gangwar (Vempire) · MIT licensed</p>
+    </footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

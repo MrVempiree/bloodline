@@ -1,0 +1,1 @@
+{"description":"GitHub profile card generator — turn any GitHub profile into a shareable stats card.","license":"MIT","name":"bloodline","private":true,"scripts":{"test":"node --test"},"type":"module","version":"1.0.0"}

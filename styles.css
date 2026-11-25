@@ -1,0 +1,179 @@
+:root {
+  --bg: #070305;
+  --bg-2: #12060a;
+  --crimson: #dc2626;
+  --crimson-deep: #7f1d1d;
+  --crimson-glow: rgba(220, 38, 38, 0.35);
+  --text: #f5ecec;
+  --muted: #b8a3a8;
+  --glass: rgba(255, 255, 255, 0.045);
+  --glass-border: rgba(255, 120, 120, 0.16);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(220, 38, 38, 0.18), transparent 60%),
+    radial-gradient(700px 420px at 10% 110%, rgba(127, 29, 29, 0.22), transparent 60%),
+    linear-gradient(160deg, var(--bg-2), var(--bg) 55%);
+  background-attachment: fixed;
+}
+
+.shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero { text-align: center; }
+
+.eyebrow {
+  letter-spacing: 0.35em;
+  font-size: 0.78rem;
+  color: var(--crimson);
+  margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, #fff, #fca5a5 55%, var(--crimson));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 42px var(--crimson-glow);
+}
+
+.tagline { color: var(--muted); margin: 0.6rem 0 0; }
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.panel { padding: 1.4rem; }
+
+.panel label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.row { display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: center; }
+.row-secondary { margin-top: 0.9rem; }
+
+input {
+  flex: 1 1 220px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--crimson);
+  outline-offset: 1px;
+}
+
+.btn {
+  padding: 0.75rem 1.3rem;
+  border-radius: 12px;
+  border: 1px solid var(--crimson-deep);
+  background: linear-gradient(180deg, #ef4444, #991b1b);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover { filter: brightness(1.12); }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--glass-border);
+  color: var(--text);
+}
+
+.hint { color: var(--muted); font-size: 0.85rem; }
+
+.status { min-height: 1.2em; color: #fca5a5; margin: 0.9rem 0 0; }
+
+.card { padding: 1.6rem; }
+
+.card-head { display: flex; gap: 1.1rem; align-items: center; }
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid var(--crimson);
+  box-shadow: 0 0 24px var(--crimson-glow);
+}
+
+.card h2 { margin: 0; font-size: 1.6rem; }
+.handle { margin: 0.15rem 0; color: #fca5a5; }
+.joined { margin: 0; color: var(--muted); font-size: 0.85rem; }
+.bio { color: var(--muted); line-height: 1.55; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.stat {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.stat-value { display: block; font-size: 1.5rem; font-weight: 700; color: #fff; }
+.stat-label { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+.card h3 { margin: 0 0 0.6rem; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: #fca5a5; }
+
+.languages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+.languages li { display: flex; align-items: center; gap: 0.7rem; font-size: 0.92rem; }
+.languages li > span:first-child { min-width: 110px; }
+
+.lang-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.lang-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--crimson-deep), var(--crimson));
+}
+
+.muted { color: var(--muted); }
+.starred a { color: #fca5a5; }
+
+.card-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
+footer p { margin: 0.3rem 0; }
